@@ -58,7 +58,7 @@ jobs:
           echo "deployment_status=${{ env.deployment_status }}"
       - name: Comment on PR for preview
         uses: marocchino/sticky-pull-request-comment@v2.9.0
-        if: (steps.deploy-preview.outputs.deployment-action == 'deploy' || steps.deploy-preview.outputs.deployment-action == deploy || steps.deploy-preview.outputs.deployment_action == 'deploy' || steps.deploy-preview.outputs.deployment_action == deploy) && (env.deployment_status == 'success' || env.deployment_status == success)
+        if: (steps.deploy-preview.outputs.deployment-action == 'deploy' || steps.deploy-preview.outputs.deployment_action == 'deploy') && (env.deployment_status == 'success')
         with:
           header: pr-preview
           message: |
