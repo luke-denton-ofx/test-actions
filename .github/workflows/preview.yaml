@@ -1,6 +1,6 @@
 name: preview
 
-# on:
+on:
 #   pull_request:
 #     types:
 #       - opened
@@ -9,7 +9,7 @@ name: preview
 #       - closed # This is not part of the default and is the reason we explicitly specify the activity types. This is so that rossjrw/pr-preview-action gets triggered on close, which will tear down the preview app.
 #     paths:
 #       - react-playground/**
-#   workflow_dispatch: {}
+  workflow_call: {}
 
 concurrency:
   group: preview-${{ github.head_ref }}
