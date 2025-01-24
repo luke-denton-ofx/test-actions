@@ -8,3 +8,8 @@ jobs:
   check-comment:
     if: github.event.comment.body == '/deploy'
     uses: ./.github/workflows/preview.yaml
+    permissions:
+      id-token: write
+      contents: write
+      pages: write
+      pull-requests: write
